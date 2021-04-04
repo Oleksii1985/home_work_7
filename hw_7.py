@@ -1,16 +1,18 @@
-from collections import Counter, OrderedDict
+from collections import Counter
 
 # Task 1
-dict_ = OrderedDict({"name": "Oleksii", "surname": "Voitiuk", "age": 36, "gender": "male", "phone": "0967618604"})
+dict_ = {"name": "Oleksii", "surname": "Voitiuk", "age": 36, "gender": "male", "phone": "0967618604"}
 print("dict_:", dict_)
 print("id dict_:", id(dict_))
 first = list(dict_.items())[0]
+second = list(dict_.items())[1]
 last = list(dict_.items())[-1]
-dict_.move_to_end(key=first[0])
-dict_.move_to_end(key=last[0], last=False)
+dict_[first[0]], dict_[last[0]] = last[1], first[1]
 print("dict_:", dict_)
 print("id dict_:", id(dict_))
-del dict_["surname"]
+dict_.pop(second[0])
+print(dict_)
+print(id(dict_))
 dict_["new_key"] = "new_value"
 print(dict_)
 print(id(dict_))
