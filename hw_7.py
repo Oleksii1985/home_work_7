@@ -17,7 +17,7 @@ print(id(dict_))
 
 # Task 2
 student = {"name": "Emma", "class": 9, "marks": 75}
-print(student["marks"])
+print(student.get("marks"))
 
 # Task 3,4
 p = {"name": "Mike", "salary": 8000}
