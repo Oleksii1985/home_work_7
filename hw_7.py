@@ -33,12 +33,7 @@ print(sample["2"][1])
 # Task 6
 list_1 = ["Украина-Киев", "Россия-Сочи", "Беларусь-Минск", "Япония-Токио", "Германия-Мюнхен"]
 list_2 = ["Киев", "Токио", "Минск"]
-list_ = []
-for elem in list_1:
-    if "Киев" in elem or "Токио" in elem or "Минск" in elem:
-        list_.append(elem)
-new_list = [element for item in list_ for element in item.split("-")]
-dict_ = dict(zip(new_list[::2], new_list[1::2]))
+dict_ = {i.split('-')[0]: i.split('-')[1] for i in list_1 if i.split('-')[1] in list_2}
 print(dict_)
 
 # Task 7
